@@ -23,14 +23,14 @@ Sign inすると，画面中央に「新規サーバ作成」ボタンが現れ�
 gitサーバにアップロードする際に必要なので，最初にやっておくと良い．
 この作業は，サーバを作り直すたびに毎回実行するものと思って欲しい．
 
-```
+```bash
 ~$ git config --global user.name "Hiroshi Suda"
 ~$ git config --global user.email "suda@net.it-chiba.ac.jp"
 ```
 
 以下のように確認してみよう
 
-```
+```bash
 ~$ git config --list
 user.name=Hiroshi Suda
 user.email=suda@net.it-chiba.ac.jp
@@ -39,7 +39,7 @@ user.email=suda@net.it-chiba.ac.jp
 ### Githubからプログラムをダウンロードする
 Paiza Cloudの画面内の「ターミナル」を開く．すると，Linuxのコマンド入力画面が現れる．ここで，gitコマンドを利用してファイルをダウンロードする．以下の最初の行を入力する．
 
-```
+```bash
 ~$ git clone https://github.com/sudahiroshi/websystem.git
 Cloning into 'websystem'...
 remote: Enumerating objects: 8, done.
@@ -52,14 +52,14 @@ remote: Total 8 (delta 1), reused 5 (delta 1), pack-reused 0
 
 続いて，カレントディレクトリを変更し，プログラムを起動する．
 
-```
+```bash
 ~$ cd websystem
 ~/websystem$ node server1.js
 ```
 
 ここでエラーが表示されてプログラムが停止する場合は，以下のように「sudo」を付けて実行すると良い．
 
-```
+```bash
 ~/websystem$ sudo node server1.js
 ```
 
@@ -85,7 +85,7 @@ Paiza Cloudの画面左上にある青いバー（「新規ファイル」の上
 
 それでは，gitコマンドを使って手元にcloneし，サーバを起動しよう．
 
-```
+```bash
 ~$ git clone <ここに各自のリポジトリをcloneするためのURLを入れる>
 ~$ cd websystem
 ~/websystem$ sudo node server1.js
@@ -105,7 +105,7 @@ server2.jsの6〜11行目に，「res.write」が並んでいるが，ここで�
 
 なお，「git commit」をする際のコメントは，あとで分かるような変更箇所や変更理由などを書く項目なので，そのまま入力しないこと．
 
-```
+```bash
 ~/websystem$ git commit -am 'ここには変更箇所などを書く'
 [master b9b0945] ここには変更箇所などを書く
  1 file changed, 3 insertions(+)
@@ -132,7 +132,7 @@ To https://github.com/sudahiroshi/webssystem.git
 ここで，5行目（server.onの次の行）では，現在時刻を取得し，変数nowに代入している．
 その後，12行目でnowを表示している．
 
-```node
+```javascript
 var http = require('http');
 var server =http.createServer();
 
@@ -172,7 +172,7 @@ server.listen(80);
 そして，6行目でURLを取得し，13行目でターミナルに表示している．
 （console.logはターミナルに表示するためのメソッド）
 
-```node
+```javascript
 const http = require('http');
 const url = require('url');
 const server =http.createServer();
@@ -199,7 +199,7 @@ server.listen(80);
 Webブラウザからアクセスすると，ターミナル上に以下の内容が表示される．
 この中の，pathnameやpathがファイル名に相当する．
 
-```
+```javascript
 
 Url {
   protocol: null,
